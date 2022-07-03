@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+   <link rel="stylesheet" href="css/slick.css">
+   <link rel="stylesheet" href="css/slick-theme.css">
+   <link rel="stylesheet" href="fonts/fonts.css">
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/media.css">
+  <title>Росстандарт</title>
+</head>
+<body>
+  <!-- Modal вопрос-->
+  <div class="modal fade" id="vopros" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content okno">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="images/close.png" alt="Закрыть" class="close"></span>
+        </button>
+        <div class="modal-header">
+          <h5 class=" zagol-xs" id="exampleModalLongTitle">Задайте вопрос специалисту</h5>
+        </div>
+        <form>
+          <div class="form-group sertifikat">
+            <input class="form-control" type="text" placeholder="Имя">
+            <input  class="form-control" type="text" name="phone" placeholder="Контактный телефон" data-validation-required-message="Вы не ввели телефон" required />
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ваш e-mail" data-validation-required-message="Вы не ввели e-mail" required >
+            <select class="form-control" required>
+              <option value="">Страна</option>
+              <option value="1">Россия</option>
+              <option value="2">Беларусь</option>
+              <option value="3">Казахстан</option>
+              <option value="4">Украина</option>
+              <option value="5">Азербайджан</option>
+            </select>
+            <div class="invalid-feedback ">Пожалуйста сделайте выбор</div>
+            <select class="form-control" required>
+              <option value="">Регион</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <div class="invalid-feedback">Пожалуйста сделайте выбор</div>
+            <input class="form-control" cols=100 rows=5 type="textarea">
+          </div>
+          <img src="images/recapcha.jpg" alt="Росстандарт" class="form-control">
+          <div class="custom-control custom-checkbox mb-1">
+            <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+            <label class="custom-control-label blok1-form-soglas" for="customControlValidation1">
+              Я согласен на обработку 
+              персональных данных
+            </label>
+            <div class="invalid-feedback">Не забудьте отметить пункт</div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block text-uppercase" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal звонок-->
+  <div class="modal fade" id="zvonok" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content okno">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="images/close.png" alt="Закрыть" class="close"></span>
+        </button>
+        <div class="modal-header">
+          <h5 class="modal-title zagol-xs" id="exampleModalLongTitle"> Закажите звонок</h5>
+        </div>
+        <form>
+          <div class="form-group sertifikat">
+            <input class="form-control" type="text" placeholder="Имя">
+            <input  class="form-control" type="text" name="phone" placeholder="Контактный телефон" data-validation-required-message="Вы не ввели телефон" required />
+            <select class="form-control" required>
+              <option value="">Страна</option>
+              <option value="1">Россия</option>
+              <option value="2">Беларусь</option>
+              <option value="3">Казахстан</option>
+              <option value="4">Украина</option>
+              <option value="5">Азербайджан</option>
+            </select>
+            <div class="invalid-feedback ">Пожалуйста сделайте выбор</div>
+            <select class="form-control" required>
+              <option value="">Регион</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <div class="invalid-feedback">Пожалуйста сделайте выбор</div>
+          </div>
+          <img src="images/recapcha.jpg" alt="Росстандарт" class="form-control">
+          <div class="custom-control custom-checkbox mb-1">
+            <input type="checkbox" class="custom-control-input" id="customControlValidation2" required>
+            <label class="custom-control-label blok1-form-soglas" for="customControlValidation2">
+              Я согласен на обработку 
+              персональных данных
+            </label>
+            <div class="invalid-feedback">Не забудьте отметить пункт</div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block text-uppercase" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal сертификат-->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content okno">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><img src="images/close.png" alt="Закрыть" class="close"></span>
+        </button>
+        <div class="modal-header">
+          <h5 class="modal-title zagol-xs" id="exampleModalLongTitle"> Заказать сертификат</h5>
+        </div>
+        <form>
+          <div class="form-group sertifikat">
+            <input class="form-control" type="text" placeholder="Имя">
+            <input  class="form-control" type="text" name="phone" placeholder="Контактный телефон" data-validation-required-message="Вы не ввели телефон" required />
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ваш e-mail" data-validation-required-message="Вы не ввели e-mail" required >
+            <select class="form-control" required>
+              <option value="">Наименование продукции</option>
+              <option value="1">Косметика</option>
+            </select>
+            <select class="form-control" required>
+              <option value="">Страна</option>
+              <option value="1">Россия</option>
+              <option value="2">Беларусь</option>
+              <option value="3">Казахстан</option>
+              <option value="4">Украина</option>
+              <option value="5">Азербайджан</option>
+            </select>
+            <div class="invalid-feedback">Пожалуйста сделайте выбор</div>
+            <select class="form-control" required>
+              <option value="">Регион</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+            <div class="invalid-feedback">Пожалуйста сделайте выбор</div>
+          </div>
+          <img src="images/recapcha.jpg" alt="Росстандарт" class="form-control">
+          <div class="custom-control custom-checkbox mb-1">
+            <input type="checkbox" class="custom-control-input" id="customControlValidation3" required>
+            <label class="custom-control-label blok1-form-soglas" for="customControlValidation3">
+              Я согласен на обработку 
+              персональных данных
+            </label>
+            <div class="invalid-feedback">Не забудьте отметить пункт</div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block text-uppercase" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal меню-->
+  <div class="modal fade" id="navbarToggleMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"><img src="images/close.png" alt="Закрыть"></span>
+                </button>
+              </div>
+              <div class="modal-body menu-modal">
+                <ul class="list-group text-uppercase list-group-flush ">
+                  <li class="list-group-item"><a href="#news" class="text-dark">Новости </a></li>
+                  <li class="list-group-item"><a href="#voprosi" class="text-dark">частые вопросы</a></li>
+                  <li class="list-group-item"><a href="#kontakt" class="text-dark">контакты </a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">Сертификация по продукции</a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">разрешительные документы</a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">технические регламенты</a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">базы кодов</a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">базы  гостов p</a></li>
+                  <li class="list-group-item"><a href="#" class="text-dark">проверка документов</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header start -->
+  <header>
+    <!-- top menu -->
+   <div class="container-fluid d-none d-xl-block bg-light">
+      <nav class="navbar navbar-expand-xl navbar-light  text-uppercase top-1">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="container">
+            <ul class="navbar-nav top-menu">
+              <li class="nav-item">
+                <a class="nav-link-top" href="news.html">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-top" href="#voprosi">Частые вопросы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link-top" href="#kontakt">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- search container -->
+    <div class="container d-none d-xl-block big-blok">
+      <div class="row">
+        <div class="col-xl-3"><a href="#"><img src="images/logo.png" alt="Росстандарт" class="logo"></a></div>
+        <div class="col-xl-7 ">
+          <form>
+            <div class="form-group forma-poiska">
+              <input class="form-control form-poisk" id="search" type="search" placeholder="Поиск по сайту" aria-label="Search">
+            </div>
+          </form>
+        </div>
+        <div class="col-xl-2 pl-0">
+          <div class="nomer-phone__wrapper">
+            <p class="nomer-phone">8 800 200-44-06</p>
+            <p class="nomer-phone-small">Звонок по России бесплатный</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- menu second start -->
+    <div class="container-fluid d-none d-xl-block bg-dark">
+      <nav class="navbar navbar-expand-xl navbar-dark   text-uppercase top-1">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9">
+                <ul class="navbar-nav mr-auto mt-2 mt-xl-0 visjta64 text-center ">
+                  <li class="nav-item">
+                    <a class="nav-link "  href="#">Сертификация<br> по продукции </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">разрешительные<br> документы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">технические<br>регламенты</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">базы<br> кодов</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link "  href="#">базы <br> гостов p</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">проверка<br> документов</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-3 d-flex justify-content-end">
+               <button type="button" class="btn top1-but" data-toggle="modal" data-target="#zvonok">
+                <img src="images/phone.png" alt="" class="">
+                <div class="top1-btn__hover">Заказать звонок</div>
+              </button>
+              <button type="button" class="btn  top1-but" data-toggle="modal" data-target="#vopros">
+                <img src="images/question.png" alt="" class="">
+                <div class="top1-btn__hover top1-btn__hover_quetion">Задать вопрос</div>
+              </button>
+              <button type="button" class="btn  top1-but" data-toggle="modal" data-target="#exampleModalCenter">
+                <img src="images/kontakt.png" alt="" class="">
+                <div class="top1-btn__hover_sertif top1-btn__hover">Заказать сертификат</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- mobile menu start -->
+  <div class="container-fluid d-none d-md-block d-xl-none bg-light">
+    <div class="container top-cont">
+      <nav class="navbar navbar-light  top-1">
+        <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#navbarToggleMenu" aria-controls="navbarToggleMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="#"><img src="images/logo-md.png" alt="Росстандарт" class="logo-md d-md-block d-none"></a>
+        <div class="col-auto ml-auto d-flex d-none">
+          <button type="button" class="btn btn btn-link" data-placement="bottom" title="Поиск">
+            <img src="images/poisk.png" class="navbar__img-icon">
+          </button>
+          <button type="button" class="btn top1-but float-right" data-placement="bottom" title="Заказать звонок" data-toggle="modal" data-target="#zvonok">
+            <img src="images/phone.png">
+          </button>
+          <button type="button" class="btn top1-but float-right" data-placement="bottom" title="Задать вопрос" data-toggle="modal" data-target="#vopros">
+            <img src="images/question.png">
+          </button>
+          <button type="button" class="btn top1-but float-right" data-placement="bottom" title="Написать письмо" data-toggle="modal" data-target="#exampleModalCenter">
+            <img src="images/kontakt.png">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>    
+    <!-- mobile right menu start -->
+  <div class="container-fluid d-md-none d-block bg-light top-cont">
+    <nav class="navbar navbar-light  top-1">
+      <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#navbarToggleMenu" aria-controls="navbarToggleMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="#"><img src="images/logo-xs.png" alt="Росстандарт" class="logo-xs d-md-none d-block"></a>
+      <div class="ml-auto d-flex">
+        <button type="button" class="btn btn btn-link btn-poisk-xs" data-slidetoggle="tooltip" data-placement="bottom" title="Поиск">
+          <img src="images/poisk.png" class="navbar__img-icon">
+        </button>
+        <button type="button" class="btn btn-primary btn-lg top3-but float-right" data-slidetoggle="tooltip" data-placement="bottom" title="Заказать звонок" data-toggle="modal" data-target="#zvonok">
+          <img src="images/phone.png">
+        </button>
+        <button type="button" class="btn btn-primary btn-lg top3-but float-right" data-slidetoggle="tooltip" data-placement="bottom" title="Задать вопрос" data-toggle="modal" data-target="#vopros">
+          <img src="images/question.png">
+        </button>
+        <button type="button" class="btn btn-primary btn-lg top3-but float-right" data-slidetoggle="tooltip" data-placement="bottom" title="Написать письмо" data-toggle="modal" data-target="#exampleModalCenter">
+          <img src="images/kontakt.png">
+        </button>
+      </div>
+    </nav>
+  </div>    
+</header>
+    <!-- mian -->
+    <main class="main-error" id="main-error">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="error__wrapper">
+              <div class="error__wrapper-bg">404</div>
+              <h2 class="error__h2">
+                Страница не найдена
+              </h2>
+              <div class="error__text">
+                 Перейдите
+                 <a href="index.html" class="error__upper-link">на главную</a>
+                 или воспользуйтесь
+                 <a href="#" class="error__upper-link">техподдержкой</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer id="kontakt">
+      <div class="container-fluid bg-dark">
+        <div class="container foot-cont d-none d-xl-block">
+          <div class="row">
+            <div class="col-xl-4 "><a href=""><img src="images/logo-dark.png" alt="Росстандарт" class="logo"></a> 
+              <div class="foot-text text-secondary footer-1">© Все права защищены © 2017. При копировании 
+                информации - активная ссылка на Rosstandart.info 
+              обязательна</div>
+            </div>
+            <div class="col-xl-2">
+              <ul class="nav flex-column foot-menu">
+                <div class="text-uppercase foot-zagol">Общая информация</div>
+                <li><a href="">Новости</a>  </li>
+                <li><a href="">Частые вопросы</a></li>
+                <li><a href="">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-2">
+              <ul class="nav flex-column foot-menu">
+                <div class="text-uppercase  foot-zagol">Базы кодов</div>
+                <li><a href="">Коды ОКП</a></li>
+                <li><a href="">Коды ОКВЕД 2</a></li>
+                <li><a href="">Коды ОКПд</a></li>
+                <li><a href="">Коды МКТУ</a></li>
+                <li><a href="">Коды ТН ВЭД</a></li>
+              </ul>
+            </div>
+            <div class="col-xl-4">
+              <div class="text-uppercase foot-zagol zagol-teg">популярные теги</div>
+              <div class="footer-tegi"><button type="button" class="btn btn-outline-secondary">Лицензирование</button>
+                <button type="button" class="btn btn-outline-secondary">Маркировка СЕ</button>
+                <button type="button" class="btn btn-outline-secondary">Сертификация строительных материалов</button>
+                <button type="button" class="btn btn-outline-secondary">Сертификация оборудования</button>
+                <button type="button" class="btn btn-outline-secondary">СБКТС</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--футер md start-->
+        <div class="container d-block d-xl-none">
+          <div id="accordion2 ">
+            <div class="card bg-dark border-secondary non-border">
+              <div class="card-header gar bg-dark" id="heading1">
+                <h5 class="mb-0 ">
+                  <button class="btn btn-link footer-arrow-up footer-arrow-d" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                   <div class="text-uppercase foot-zagol"> Общая информация</div>
+                 </button>
+               </h5>
+             </div>
+             <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#accordion2">
+              <div class="footer__card-body">
+                <ul class="nav flex-column foot-menu">
+                  <li><a href="#">Новости</a></li>
+                  <li><a href="#">Частые вопросы</a></li>
+                  <li><a href="#">Контакты</a></li>
+                </ul>      
+              </div>
+            </div>
+          </div>
+          <div class="card bg-dark border-secondary non-border">
+            <div class="card-header gar bg-dark" id="heading2">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed footer-arrow-up footer-arrow-d" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  <div class="text-uppercase foot-zagol">Базы кодов</div>
+                </button>
+              </h5>
+            </div>
+            <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion2">
+              <div class="footer__card-body">
+                <ul class="nav flex-column foot-menu">
+                  <li><a href="">Коды ОКП</a></li>
+                  <li><a href="">Коды ОКВЕД 2</a></li>
+                  <li><a href="">Коды ОКПд</a></li>
+                  <li><a href="">Коды МКТУ</a></li>
+                  <li><a href="">Коды ТН ВЭД</a></li>
+                </ul>  
+              </div>
+            </div>
+          </div>
+          <div class="card bg-dark border-secondary non-border">
+            <div class="card-header gar bg-dark" id="heading3">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed footer-arrow-up footer-arrow-d" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                 <div  class="text-uppercase foot-zagol zagol-teg">популярные теги</div>
+               </button>
+             </h5>
+           </div>
+           <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion2">
+            <div class="footer__card-body">
+             <div class="footer-tegi"><button type="button" class="btn btn-outline-secondary">Лицензирование</button>
+              <button type="button" class="btn btn-outline-secondary">Маркировка СЕ</button>
+              <button type="button" class="btn btn-outline-secondary">Сертификация строительных материалов</button>
+              <button type="button" class="btn btn-outline-secondary">Сертификация оборудования</button>
+              <button type="button" class="btn btn-outline-secondary">СБКТС</button>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer copyright -->
+    <div class="row foot-cont">
+      <div class="col mr-auto ">
+        <a href=""><img src="images/logo-md-dark.png" alt="Росстандарт" class="logo"></a> 
+      </div>
+      <div class="foot-text text-secondary col-12 col-md-8 ml-auto">© Все права защищены © 2017. При копировании 
+        информации - активная ссылка на Rosstandart.info 
+        обязательна
+      </div>
+    </div>
+  </div>
+  <!--футер md end-->
+</div>
+</footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.maskedinput.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
